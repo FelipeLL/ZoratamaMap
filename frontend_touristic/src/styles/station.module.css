@@ -1,0 +1,42 @@
+.sidebar {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 450px;
+  height: 98%;
+  overflow: auto;
+  border-radius: 10px;
+  background: #333;
+  z-index: 10;
+  transition: transform 1s;
+}
+
+.collapse {
+  transform: translateX(-460px);
+}
+
+.sidebar-content {
+  position: relative;
+  min-height: 100%;
+  padding: 5px;
+  overflow: auto;
+  background: #fff;
+}
+
+.dashboard {
+  position: relative;
+  left: 5px;
+  width: 97%;
+}
+
+@media screen and (max-width: 470px) {
+  .sidebar {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .sidebar {
+    width: 350px;
+  }
+}

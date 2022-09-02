@@ -1,0 +1,15 @@
+.rounded-boton {
+  position: absolute;
+  width: 1.45em;
+  height: 1.45em;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  margin-left: 10px;
+  margin-top: 90px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,112 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  margin: 12px 0 0 4px;
+}
+
+.register-box {
+  margin: 0 0 10px;
+  padding: 10px 0;
+  width: 450px;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  background: #fff;
+}
+
+.header {
+  margin: 14.45px auto 12px;
+  text-align: center;
+}
+
+.header img {
+  width: 255px;
+  height: auto;
+  background: cover no-repeat;
+}
+
+.form {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+
+.input-box {
+  margin: auto 40px 6px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 36px;
+  padding: 9px 0 7px 8px;
+  margin: 0;
+  font-size: 12px;
+  border-radius: 3px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  border: 1px solid #efefef;
+  background-color: #fafafa;
+}
+
+.input-box input:focus {
+  border-color: #bbb;
+}
+
+.button-box {
+  position: relative;
+  display: block;
+  margin: 8px 40px;
+}
+
+.button-box button {
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  outline: none;
+  white-space: nowrap;
+  border: 1px solid #3897f0;
+  color: #fff;
+  background: #3897f0;
+  cursor: pointer;
+}
+
+.text {
+  margin: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #262626;
+}
+
+.text a,
+.text a:visited,
+.text a:hover,
+.text a:active {
+  margin-left: 3px;
+  color: #3897f0;
+}
+
+@media (max-height: 560px) {
+  .header {
+    margin: 0 auto 12px;
+  }
+  .header img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 560px) {
+  .register-box {
+    padding: 5px 0;
+    width: 350px;
+  }
+}

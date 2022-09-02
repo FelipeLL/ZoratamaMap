@@ -1,0 +1,233 @@
+.logo_name {
+  padding-top: 30px;
+  color: #1a1e24;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.text {
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #1a1e24;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.contenedor {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 250px;
+}
+
+.select:focus {
+  border-color: #1a83e6;
+  box-shadow: 1.5px -1.5px 5px #1a83e6;
+}
+
+.contenedor .w_rapper {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px dashed #c2cdda;
+  border-radius: 10px;
+}
+
+.w_rapper .image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.w_rapper .icon {
+  margin-left: 48px;
+  font-size: 100px;
+  color: #1a1e24;
+}
+
+.text-image {
+  font-size: 15px;
+
+  color: #5b5b7b;
+}
+
+.cancel-btn .cancel-btn-icon {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  font-size: 25px;
+  color: #1a1e24;
+  cursor: pointer;
+  /* display: none; */
+}
+
+.cancel-btn .cancel-btn-icon-disable {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  font-size: 25px;
+  color: #1a1e24;
+  cursor: pointer;
+  display: none;
+}
+
+.cancel-btn .cancel-btn-icon:hover {
+  color: #1a83e6;
+}
+
+.file-name {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 8px;
+  font-size: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #1a83e6 85%, #1a1e24 100%);
+}
+.file-name-disable {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 8px;
+  font-size: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #1a83e6 85%, #1a1e24 100%);
+  display: none;
+}
+.container-custom-input {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.custom-input {
+  width: 300px;
+  margin-left: 1px;
+  border-radius: 50px;
+  outline: none;
+  background: white;
+  box-shadow: 1px 1px 5px black;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.button-box {
+  position: relative;
+  display: block;
+  margin: 8px 40px;
+}
+
+.button-box button {
+  width: 100%;
+  height: 35px;
+  padding: 0 8px;
+  margin-top: 50px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  outline: none;
+  white-space: nowrap;
+  border: 1px solid #3897f0;
+  color: #fff;
+  background: #3897f0;
+  cursor: pointer;
+}
+
+.button-box button:hover {
+  border: 1px solid #1786ed;
+  background: #1786ed;
+}
+
+@media screen and (max-height: 660px) {
+  .logo_name {
+    padding-top: 25px;
+  }
+  .text {
+    margin-top: 30px;
+  }
+  .button-box button {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .logo_name {
+    font-size: 20px;
+  }
+  .select {
+    height: 32px;
+    font-size: 14px;
+  }
+  .text {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .contenedor {
+    height: 120px;
+  }
+  .contenedor .w_rapper {
+    height: 120px;
+  }
+  .w_rapper .icon {
+    margin-left: 65px;
+    font-size: 80px;
+  }
+  .button-box button {
+    margin-top: 25px;
+    height: 33px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-height: 510px) {
+  .logo_name {
+    padding-top: 20px;
+  }
+  .container-custom-input {
+    margin-top: 15px;
+  }
+  .button-box button {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .custom-input {
+    width: 265px;
+    font-size: 10px;
+  }
+}
+
+::-webkit-file-upload-button {
+  width: 145px;
+  padding: 9px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 0 1px;
+  outline: none;
+  color: white;
+  background: linear-gradient(135deg, #1a83e6 100%, #1a1e24 100%);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+::-webkit-file-upload-button:hover {
+  background: linear-gradient(135deg, #1a83e6 40%, #1a1e24 100%);
+}

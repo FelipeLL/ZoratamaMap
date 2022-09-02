@@ -1,0 +1,156 @@
+.form {
+  margin-top: 25px;
+}
+
+.logo_name {
+  padding-top: 30px;
+  color: #1a1e24;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.select {
+  width: 96%;
+  margin-top: 50px;
+  margin-left: 9px;
+}
+
+.select:focus {
+  border-color: #1a83e6;
+  box-shadow: 1.5px -1.5px 5px #1a83e6;
+}
+
+.input-box {
+  height: 52px;
+  margin: 5px 0;
+}
+
+.input-box {
+  margin-left: 10px;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  height: 36px;
+  padding: 9px 0 7px 8px;
+  margin: 0;
+  font-size: 14px;
+  border-radius: 3px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  border: 1px solid #efefef;
+  background-color: #fafafa;
+}
+
+.input-box textarea {
+  height: 150px;
+}
+
+.input-box input:focus {
+  border-color: #bbb;
+}
+
+.input-box textarea:focus {
+  border-color: #bbb;
+}
+
+.text {
+  color: #1a1e24;
+  width: 100%;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.button-box {
+  position: relative;
+  display: block;
+  margin: 8px 40px;
+}
+
+.button-box button {
+  width: 100%;
+  height: 35px;
+  padding: 0 8px;
+  margin-top: 125px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  outline: none;
+  white-space: nowrap;
+  border: 1px solid #3897f0;
+  color: #fff;
+  background: #3897f0;
+  cursor: pointer;
+}
+
+.button-box button:hover {
+  border: 1px solid #1786ed;
+  background: #1786ed;
+}
+
+@media screen and (max-height: 660px) {
+  .logo_name {
+    padding-top: 25px;
+  }
+  .form {
+    margin-top: 20px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .input-box textarea {
+    height: 70px;
+  }
+  .button-box button {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-height: 560px) {
+  .logo_name {
+    padding-top: 25px;
+    font-size: 20px;
+  }
+  .select {
+    margin-top: 25px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .form {
+    margin-top: 15px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .input-box input,
+  .input-box textarea {
+    font-size: 13px;
+  }
+  .input-box textarea {
+    height: 70px;
+  }
+  .button-box button {
+    margin-top: 35px;
+    height: 33px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .logo_name {
+    padding-top: 20px;
+  }
+  .select {
+    margin-top: 15px;
+  }
+  .form {
+    margin-top: 10px;
+  }
+  .button-box button {
+    margin-top: 30px;
+  }
+}

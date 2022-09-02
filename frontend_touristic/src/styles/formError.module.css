@@ -1,0 +1,21 @@
+.caja {
+  position: relative;
+  height: 15px;
+  left: 36px;
+}
+
+.icon {
+  position: absolute;
+  top: -3px;
+  left: 5px;
+  font-size: 13px;
+  color: red;
+}
+
+.message {
+  position: absolute;
+  left: 28px;
+  top: -5px;
+  color: red;
+  font-size: 12px;
+}

@@ -1,0 +1,78 @@
+.form {
+  margin-top: 25px;
+}
+
+.input-box {
+  height: 52px;
+  margin: 5px 0;
+}
+
+.input {
+  height: 90%;
+  width: 90%;
+  margin-left: 10px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #c7bebe;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.textArea {
+  height: 80px;
+  width: 96%;
+  margin-left: 10px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #c7bebe;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #503e3c;
+}
+
+.button {
+  margin-top: 50px;
+  margin-left: 54px;
+  height: 80%;
+  width: 77%;
+  outline: none;
+  padding: 0 15px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
+  background: #6a5351;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #503e3c;
+}
+
+.text {
+  color: #333;
+  width: 100%;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.text-a {
+  text-decoration: none;
+  color: #1a83e6;
+}
+
+.text-a:hover {
+  text-decoration: underline;
+}
