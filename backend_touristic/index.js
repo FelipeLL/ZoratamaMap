@@ -1,5 +1,6 @@
 import express from "express";
 import fileUpload from "express-fileupload";
+import path from "path"
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { Config } from "./config/index.js";
@@ -18,6 +19,9 @@ app.use(cookieParser());
 //sirve para procesar los datos enviados desde los forms
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Hacer que node sirva los archivos de nuestro app React
+app.use(express.static(path.resolve(__dirname, "../frontend_touristic/build")))
 
 //carpeta temporal donde se van a estar "temporalmente" los archivos que se suben
 app.use(fileUpload({
