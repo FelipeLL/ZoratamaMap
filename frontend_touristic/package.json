@@ -55,5 +55,8 @@
   "devDependencies": {
     "typescript": "^4.6.3",
     "worker-loader": "^3.0.8"
+  },
+  "engines": {
+    "node": "16.15.0"
   }
 }
