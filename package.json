@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "build": "cd frontend_touristic && npm install && npm run build"
+    "heroku-postbuild": "cd frontend_touristic && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "keywords": [],
   "author": "",

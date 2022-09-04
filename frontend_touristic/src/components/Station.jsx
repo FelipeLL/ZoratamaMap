@@ -21,7 +21,7 @@ const Station = ({ estacion, data, setSliderStation }) => {
 
   const handleDeleteImage = async (index, name) => {
     await axios.delete(
-      `https://zoratamamap.herokuapp.com/api/images/${index}`,
+      `https://mapzoratama.herokuapp.com/api/images/${index}`,
       {
         data: {
           name,
@@ -36,7 +36,7 @@ const Station = ({ estacion, data, setSliderStation }) => {
   useEffect(() => {
     const axiosData = async () => {
       if (estacion !== 0) {
-        const URI = "https://zoratamamap.herokuapp.com/api/images/" + estacion;
+        const URI = "https://mapzoratama.herokuapp.com/api/images/" + estacion;
 
         const res = await axios.get(URI);
 

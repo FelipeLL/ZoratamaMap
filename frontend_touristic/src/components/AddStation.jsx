@@ -19,7 +19,7 @@ const AddStation = () => {
   const inputLatRef = useRef(null);
   const inputDesRef = useRef(null);
 
-  const URI = "https://zoratamamap.herokuapp.com/api/estaciones";
+  const URI = "https://mapzoratama.herokuapp.com/api/estaciones";
 
   const [estaciones, setEstaciones] = useState(initialState);
   const { setUpload } = useContext(UserContext);

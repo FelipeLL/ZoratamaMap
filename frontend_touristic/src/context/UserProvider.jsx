@@ -18,7 +18,7 @@ const UserProvider = ({ children }) => {
     //const res = await axios.get("http://localhost:5000/auth");
     const res = await axios({
       method: "get",
-      url: "https://zoratamamap.herokuapp.com/api/auth",
+      url: "https://mapzoratama.herokuapp.com/api/auth",
       withCredentials: true,
     });
     if (res.data.isToken) {
