@@ -53,7 +53,7 @@
 
 .profile-contact {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 90%;
 }
 
@@ -89,5 +89,11 @@
   }
   .profile-contact p {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 470px) {
+  .profile-contact {
+    justify-content: space-between;
   }
 }

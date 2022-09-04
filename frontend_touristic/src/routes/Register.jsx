@@ -11,23 +11,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const URI = "https://mapzoratama.herokuapp.com/api/users/register";
+  const URI = "http://localhost:5000/users/register";
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
   } = useForm();
 
-  const {
-    required,
-    patternEmail,
-    minLength,
-    validateTrim,
-    validateEquals,
-    patternPassword,
-  } = formValidate();
+  const { required, patternEmail, validateTrim } = formValidate();
 
   const onSubmit = async (data) => {
     try {
@@ -58,30 +50,7 @@ const Register = () => {
               />
             </div>
             {errors.nombre && <FormError error={errors.nombre} />}
-            <div className={styles["input-box"]}>
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Apellido"
-                name="apellido"
-                {...register("apellido", {
-                  required,
-                })}
-              />
-            </div>
-            {errors.apellido && <FormError error={errors.apellido} />}
-            <div className={styles["input-box"]}>
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Teléfono"
-                name="telefono"
-                {...register("telefono", {
-                  required,
-                })}
-              />
-            </div>
-            {errors.telefono && <FormError error={errors.telefono} />}
+
             <div className={styles["input-box"]}>
               <input
                 className={styles.input}
@@ -102,28 +71,11 @@ const Register = () => {
                 placeholder="Contraseña"
                 name="password"
                 {...register("password", {
-                  minLength,
                   validate: validateTrim,
-                  pattern: patternPassword,
                 })}
               />
             </div>
             {errors.password && <FormError error={errors.password} />}
-
-            <div className={styles["input-box"]}>
-              <input
-                className={styles.input}
-                type="password"
-                placeholder="Confirmar contraseña"
-                name="confirmPassword"
-                {...register("confirmPassword", {
-                  validate: validateEquals(getValues),
-                })}
-              />
-            </div>
-            {errors.confirmPassword && (
-              <FormError error={errors.confirmPassword} />
-            )}
 
             <span className={styles["button-box"]}>
               <button>Registrarse</button>

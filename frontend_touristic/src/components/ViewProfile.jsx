@@ -10,11 +10,10 @@ const ViewProfile = ({ userData }) => {
         <img src={profile} alt="profile" />
       </div>
       <p className={styles["profile-text"]}>
-        {userData.length !== 0 &&
-          `${userData[0].nombre} ${userData[0].apellido}`}
+        {userData.length !== 0 && `${userData[0].nombre}`}
       </p>
       <div className={styles["profile-contact"]}>
-        <p>(+57) {userData.length !== 0 && userData[0].telefono}</p>
+        <p>Correo electrónico: </p>
         <p>{userData.length !== 0 && userData[0].correo}</p>
       </div>
     </div>

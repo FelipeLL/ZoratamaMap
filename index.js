@@ -45,6 +45,7 @@ app.use("/api/estaciones", estacionRoute);
 app.use("/api/images", imageRoute);
 //conexión a la base de datos
 try {
+  console.log(Config.database);
   await db.authenticate();
   console.log("conexión exitosa a la BD");
 } catch (error) {
