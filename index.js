@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Hacer que node sirva los archivos de nuestro app React
-app.use(express.static(path.resolve(__dirname, "../frontend_touristic/build")))
+/* app.use(express.static(path.resolve(__dirname, "../frontend_touristic/build"))) */
 
 //carpeta temporal donde se van a estar "temporalmente" los archivos que se suben
 app.use(fileUpload({
@@ -33,7 +33,7 @@ app.use(fileUpload({
 
 const corsConfig = {
   credentials: true,
-  origin: ['https://zoratama-map.netlify.app'],
+  origin: ['https://zoratama-map.netlify.app', "https://mapzoratama.herokuapp.com"],
 };
 app.use(cors(corsConfig));
 
@@ -51,9 +51,20 @@ try {
   console.log("error a la BD: " + error);
 }
 
-app.get("/", (req, res) => {
+app.get("/api/", (req, res) => {
   res.json({ message: "active" })
 })
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'frontend_touristic/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend_touristic/build', 'index.html'));
+  });
+} else {
+  console.log("no esta en producción");
+}
 
 app.listen(Config.port, () => {
   console.log("server listening on port " + Config.port);
