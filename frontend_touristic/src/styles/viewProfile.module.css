@@ -39,10 +39,33 @@
   font-weight: 500;
 }
 
+.shadow {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  width: 218px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 100px 100px;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 5;
+}
+
+.shadow .shadow-camera {
+  font-size: 35px;
+  color: #fff;
+}
+
+.custom-input {
+  display: none;
+}
+
 .profile-circular img {
   width: 220px;
+  height: 220px;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 5;
 }
 
 .profile-text {
@@ -63,6 +86,50 @@
   font-weight: 500;
 }
 
+.buttons-profile {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.button-box {
+  position: relative;
+  display: block;
+}
+
+.button-box button {
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  outline: none;
+  white-space: nowrap;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button-box .button-delete {
+  background: #ff4c4c;
+  border: 1px solid #ff4c4c;
+}
+
+.button-box .button-update {
+  background: #ffc845;
+  border: 1px solid #ffc845;
+}
+
+.button-box .button-delete:hover {
+  border: 1px solid #ff2e2e;
+  background: #ff2e2e;
+}
+
+.button-box .button-update:hover {
+  border: 1px solid #ffbb1a;
+  background: #ffbb1a;
+}
+
 @media (max-height: 630px) {
   .profile {
     padding: 20px 0;
@@ -78,11 +145,26 @@
     height: 150px;
     width: 150px;
   }
+
+  .shadow {
+    bottom: 5px;
+    width: 149px;
+    height: 70px;
+    border-radius: 0 0 200px 200px;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .shadow .shadow-camera {
+    font-size: 20px;
+    color: #fff;
+  }
+
   .profile-title {
     font-size: 20px;
   }
   .profile-circular img {
     width: 150px;
+    height: 150px;
   }
   .profile-text {
     font-size: 16px;

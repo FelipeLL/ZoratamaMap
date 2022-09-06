@@ -1,7 +1,7 @@
 import styles from "../styles/updateProfile.module.css";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { UserContext } from "../context/UserProvider";
 import { alertError, alertSuccess } from "../utilities/Alerts";
 import { ToastContainer } from "react-toastify";
@@ -24,7 +24,7 @@ const UpdateProfile = ({ userData }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const URI = `http://localhost:5000/users/${userData[0].ID_Usuario}`;
+      const URI = `https://mapzoratama.herokuapp.com/api/users/${userData[0].ID_Usuario}`;
       const res = await axios.put(URI, user);
       alertSuccess(res.data.results.message);
       setUploadProfile(true);
