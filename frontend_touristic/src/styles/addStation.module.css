@@ -17,6 +17,28 @@
   margin-top: 15px;
 }
 
+.select {
+  margin: 10px 10px;
+}
+
+.select:focus {
+  border-color: #1a83e6;
+  box-shadow: 1.5px -1.5px 5px #1a83e6;
+}
+
+.contenedor-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+.contenedor-icon img {
+  width: 40px;
+  height: 40px;
+}
+
 .input-box {
   height: 52px;
   margin: 5px 0;
@@ -86,7 +108,7 @@
   background: #1786ed;
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
   .input-box textarea {
     height: 100px;
   }
@@ -95,7 +117,7 @@
   }
 }
 
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 660px) {
   .logo_name {
     padding-top: 25px;
     font-size: 20px;
@@ -118,9 +140,21 @@
     height: 33px;
     font-size: 16px;
   }
+  .select {
+    margin: 5px 10px;
+    font-size: 14px;
+    height: 32px;
+  }
+  .contenedor-icon {
+    margin-top: 40px;
+  }
+  .contenedor-icon img {
+    width: 35px;
+    height: 35px;
+  }
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 570px) {
   .logo_name {
     padding-top: 20px;
   }
@@ -128,6 +162,18 @@
     margin-top: 10px;
   }
   .text {
-    margin-top: 10px;
+    margin-top: 1px;
+  }
+  .contenedor-icon {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .input-box textarea {
+    height: 60px;
+  }
+  .button-box button {
+    margin-top: 20px;
   }
 }

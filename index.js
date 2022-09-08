@@ -12,6 +12,7 @@ import userRoute from "./routes/userRoute.js";
 import authRoute from "./routes/authRoute.js"
 import estacionRoute from "./routes/estacionRoute.js"
 import imageRoute from "./routes/imageRoute.js"
+import iconoRoute from "./routes/iconoRoute.js"
 
 
 const app = express();
@@ -43,6 +44,8 @@ app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/estaciones", estacionRoute);
 app.use("/api/images", imageRoute);
+app.use("/api/iconos", iconoRoute);
+
 //conexión a la base de datos
 try {
   console.log(Config.database);

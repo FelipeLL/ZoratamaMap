@@ -9,7 +9,6 @@ import Admin from "../components/Admin";
 import { UserContext } from "../context/UserProvider";
 import Logout from "../components/Logout";
 import OpenConfig from "../components/OpenConfig";
-import Point from "../components/Point";
 import OpenProfile from "../components/OpenProfile";
 import Profile from "../components/Profile";
 
@@ -58,7 +57,7 @@ const MapView = () => {
           setEstacion(estacion.ID_Estacion);
         }}
       >
-        <Point />
+        <img src={estacion.icono.url} alt="img" />
       </Marker>
     ));
   }, [data]);

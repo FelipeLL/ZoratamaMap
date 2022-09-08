@@ -21,7 +21,7 @@ const ViewProfile = ({ userData }) => {
     }
     const formdata = new FormData();
     formdata.append("image", file);
-
+    console.log(file);
     await axios.put(
       "https://mapzoratama.herokuapp.com/api/users/imageProfile/" +
         userData[0].ID_Usuario,
@@ -39,7 +39,7 @@ const ViewProfile = ({ userData }) => {
       return;
     }
 
-    const isNameOfOneImageRegEx = /.(jpe?g|gif|png)$/i;
+    const isNameOfOneImageRegEx = /.(jpe?g|gif|png|svg)$/i;
     const isValidType = isNameOfOneImageRegEx.test(file.name);
 
     if (!isValidType) {
@@ -89,7 +89,7 @@ const ViewProfile = ({ userData }) => {
             type="file"
             onChange={handleFileChange}
             ref={inputFileRef}
-            accept=".jpg, .jpeg, .gif, .png"
+            accept=".jpg, .jpeg, .gif, .png, .svg"
           />
         </div>
       </div>
