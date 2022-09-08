@@ -21,7 +21,6 @@ const ViewProfile = ({ userData }) => {
     }
     const formdata = new FormData();
     formdata.append("image", file);
-    console.log(file);
     await axios.put(
       "https://mapzoratama.herokuapp.com/api/users/imageProfile/" +
         userData[0].ID_Usuario,

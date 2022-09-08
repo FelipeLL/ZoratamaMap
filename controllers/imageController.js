@@ -25,7 +25,6 @@ export const getAllImages = async (req, res) => {
 
 export const removeImage = async (req, res) => {
     try {
-        console.log("b");
         let results = await remove(req.params.id, req.body.name)
 
         res.json(results)

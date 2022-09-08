@@ -31,7 +31,6 @@ const UploadImages = () => {
   const selectRef = useRef(null);
 
   const handleFileChange = (e) => {
-    console.log(e.target.files);
     const [file] = e.target.files;
     if (!file) {
       console.log("necesitas cargar un archivo");

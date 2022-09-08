@@ -1,8 +1,6 @@
 import ImageModel from "../models/ImageModel.js"
 
 export const addImage = async (image) => {
-    console.log("c");
-
     await ImageModel.create(image)
     return { message: "Imagen creada correctamente" }
 
