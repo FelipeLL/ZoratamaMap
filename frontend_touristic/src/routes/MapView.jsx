@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useContext } from "react";
-import Map, { Marker, GeolocateControl } from "react-map-gl";
+import Map, { Marker, GeolocateControl, Source, Layer } from "react-map-gl";
 import axios from "axios";
 import { point } from "@turf/helpers";
 import GeocoderControl from "../components/GeocoderControl";
@@ -37,7 +37,7 @@ const MapView = () => {
   const [sliderProfile, setSliderProfile] = useState(false);
   const [data, setData] = useState([]);
   const [estacion, setEstacion] = useState(0);
-  const { admin } = useContext(UserContext);
+  const { admin, coordinates } = useContext(UserContext);
   //establecen los limites del mapa
   const bounds = [
     [-74.453816, 4.213004], //Southwest coords
@@ -57,6 +57,7 @@ const MapView = () => {
           setEstacion(estacion.ID_Estacion);
         }}
       >
+        {/* <Point svg={"animal"} /> */}
         <img src={estacion.icono.url} alt="img" />
       </Marker>
     ));
@@ -72,6 +73,31 @@ const MapView = () => {
     };
   }, [data]);
 
+  const layerStyle = {
+    type: "line",
+    layout: {
+      "line-join": "round",
+      "line-cap": "round",
+    },
+    paint: {
+      "line-color": "#be0027",
+      "line-width": 8,
+    },
+  };
+
+  const geojson = {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          properties: {},
+          coordinates,
+        },
+      },
+    ],
+  };
   return (
     <>
       <Map
@@ -84,7 +110,7 @@ const MapView = () => {
           bottom: "0",
           top: "0",
         }}
-        maxBounds={bounds}
+        // maxBounds={bounds}
         mapboxAccessToken="pk.eyJ1IjoiamZlbGlwZWxhZGlubyIsImEiOiJjbDFmbmc2MGIwMGFhM2NxYjNkMjJnNHl6In0.4DpT3U9E6A9nzbxdb_6vHg"
         mapStyle="mapbox://styles/jfelipeladino/cl1yho734000414o5b4b0j9xe"
       >
@@ -96,6 +122,11 @@ const MapView = () => {
           estacion={estacion}
           data={data}
         />
+        <Source type="geojson" data={geojson}>
+          <Layer {...layerStyle} />
+        </Source>
+        {/* {sources.hasOwnProperty("type") && (
+        )} */}
 
         {/* Si es admin muestra el icono y el slider de administrador */}
         {admin ? (

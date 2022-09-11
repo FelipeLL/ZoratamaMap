@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
   const [upload, setUpload] = useState(false);
   const [uploadProfile, setUploadProfile] = useState(false);
   const [uploadImage, setUploadImage] = useState(false);
+  const [coordinates, setCoordinates] = useState([]);
 
   useEffect(() => {
     readToken();
@@ -44,6 +45,8 @@ const UserProvider = ({ children }) => {
         setIdUser,
         uploadProfile,
         setUploadProfile,
+        coordinates,
+        setCoordinates,
       }}
     >
       {children}

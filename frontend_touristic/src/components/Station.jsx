@@ -10,14 +10,14 @@ import { ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserProvider";
-import { alertInfo } from "../utilities/Alerts";
+import { alertError, alertInfo } from "../utilities/Alerts";
 
 const Station = ({ estacion, data, setSliderStation }) => {
   //en el result se guarda la estación en especifico
   let result = data.filter((item) => item.ID_Estacion === estacion);
   const [imageList, setImageList] = useState([]);
   const { uploadImage, setUploadImage } = useContext(UserContext);
-  const { admin } = useContext(UserContext);
+  const { admin, setCoordinates } = useContext(UserContext);
 
   const handleDeleteImage = async (index, name) => {
     await axios.delete(
@@ -28,16 +28,43 @@ const Station = ({ estacion, data, setSliderStation }) => {
         },
       }
     );
-
     setUploadImage(true);
     alertInfo("Imagen eliminada correctamente");
+  };
+
+  const handleLocation = async () => {
+    const successPosition = async (location) => {
+      const TOKEN =
+        "pk.eyJ1IjoiamZlbGlwZWxhZGlubyIsImEiOiJjbDFmbHF1dzUwMXo1M2JudDQwNjVoNWw3In0.wiRr4CxecJHGtM18meygeQ";
+      const profile = "driving";
+      const from = [location.coords.longitude, location.coords.latitude];
+      const to = [result[0].longitud, result[0].latitud];
+      const URI = `https://api.mapbox.com/directions/v5/mapbox/${profile}/${from};${to}?geometries=geojson&access_token=${TOKEN}`;
+      const res = await axios.get(URI);
+      setCoordinates(res.data.routes[0].geometry.coordinates);
+      setSliderStation(false);
+    };
+
+    const errorPosition = (err) => {
+      alertError("No se otorgaron permisos de ubicación");
+    };
+
+    const options = {
+      enableHighAccuracy: true, // Alta precisión
+      maximumAge: 0, // No queremos caché
+    };
+
+    navigator.geolocation.getCurrentPosition(
+      successPosition,
+      errorPosition,
+      options
+    );
   };
 
   useEffect(() => {
     const axiosData = async () => {
       if (estacion !== 0) {
         const URI = "https://mapzoratama.herokuapp.com/api/images/" + estacion;
-
         const res = await axios.get(URI);
 
         setImageList(res.data);
@@ -89,7 +116,9 @@ const Station = ({ estacion, data, setSliderStation }) => {
                 className={`${styles.indications}`}
               />
             </span>
-            <p className={styles["content-text"]}>Indicaciones</p>
+            <p className={styles["content-text"]} onClick={handleLocation}>
+              Indicaciones
+            </p>
           </div>
         </div>
         {admin ? (
