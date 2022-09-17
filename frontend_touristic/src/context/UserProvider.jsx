@@ -9,7 +9,9 @@ const UserProvider = ({ children }) => {
   const [upload, setUpload] = useState(false);
   const [uploadProfile, setUploadProfile] = useState(false);
   const [uploadImage, setUploadImage] = useState(false);
-  const [coordinates, setCoordinates] = useState([]);
+  const [directions, setDirections] = useState({});
+  const [profile, setProfile] = useState("driving");
+  const [sliderIndications, setSliderIndications] = useState(false);
 
   useEffect(() => {
     readToken();
@@ -45,8 +47,12 @@ const UserProvider = ({ children }) => {
         setIdUser,
         uploadProfile,
         setUploadProfile,
-        coordinates,
-        setCoordinates,
+        directions,
+        setDirections,
+        sliderIndications,
+        setSliderIndications,
+        profile,
+        setProfile,
       }}
     >
       {children}

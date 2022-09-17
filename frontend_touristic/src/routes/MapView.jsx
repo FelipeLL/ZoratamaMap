@@ -3,7 +3,6 @@ import Map, { Marker, GeolocateControl, Source, Layer } from "react-map-gl";
 import axios from "axios";
 import { point } from "@turf/helpers";
 import GeocoderControl from "../components/GeocoderControl";
-import DirectionsControl from "../components/DirectionsControl";
 import SliderStation from "../components/SliderStation";
 import Admin from "../components/Admin";
 import { UserContext } from "../context/UserProvider";
@@ -11,6 +10,7 @@ import Logout from "../components/Logout";
 import OpenConfig from "../components/OpenConfig";
 import OpenProfile from "../components/OpenProfile";
 import Profile from "../components/Profile";
+import Indications from "../components/Indications";
 
 const MapView = () => {
   //estado inicial de la vista
@@ -37,7 +37,7 @@ const MapView = () => {
   const [sliderProfile, setSliderProfile] = useState(false);
   const [data, setData] = useState([]);
   const [estacion, setEstacion] = useState(0);
-  const { admin, coordinates } = useContext(UserContext);
+  const { admin, directions } = useContext(UserContext);
   //establecen los limites del mapa
   const bounds = [
     [-74.453816, 4.213004], //Southwest coords
@@ -93,11 +93,15 @@ const MapView = () => {
         geometry: {
           type: "LineString",
           properties: {},
-          coordinates,
+          coordinates:
+            Object.entries(directions).length === 0
+              ? ""
+              : directions.geometry.coordinates,
         },
       },
     ],
   };
+
   return (
     <>
       <Map
@@ -125,10 +129,9 @@ const MapView = () => {
         <Source type="geojson" data={geojson}>
           <Layer {...layerStyle} />
         </Source>
-        {/* {sources.hasOwnProperty("type") && (
-        )} */}
 
-        {/* Si es admin muestra el icono y el slider de administrador */}
+        <Indications />
+
         {admin ? (
           <>
             <Admin
@@ -154,7 +157,7 @@ const MapView = () => {
           <>
             <GeocoderControl estacionesGeoJSON={estacionesGeoJSON} />
 
-            <DirectionsControl />
+            {/* <DirectionsControl estacionesGeoJSON={estacionesGeoJSON} /> */}
           </>
         ) : (
           console.log("no hay datos")

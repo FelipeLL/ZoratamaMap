@@ -1,5 +1,12 @@
 .title {
   padding-top: 50px;
+  color: #1a1e24;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 15px;
 }
 
 .lista-imagenes img {
@@ -38,7 +45,7 @@
 }
 
 .mtop {
-  margin-top: 50px;
+  margin-top: 35px;
 }
 
 .button:hover {
@@ -102,15 +109,27 @@
     height: 200px;
     width: 180px;
   }
+  .title {
+    padding-top: 20px;
+  }
+  .description {
+    font-size: 13px;
+  }
+  .mtop {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-height: 520px) {
   .title {
-    padding-top: 25px;
+    padding-top: 15px;
     font-size: 20px;
   }
+  .description {
+    line-height: 17px;
+  }
   .mtop {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .icon {

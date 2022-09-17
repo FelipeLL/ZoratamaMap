@@ -17,7 +17,8 @@ const Station = ({ estacion, data, setSliderStation }) => {
   let result = data.filter((item) => item.ID_Estacion === estacion);
   const [imageList, setImageList] = useState([]);
   const { uploadImage, setUploadImage } = useContext(UserContext);
-  const { admin, setCoordinates } = useContext(UserContext);
+  const { admin, directions, setDirections, setSliderIndications, profile } =
+    useContext(UserContext);
 
   const handleDeleteImage = async (index, name) => {
     await axios.delete(
@@ -36,13 +37,15 @@ const Station = ({ estacion, data, setSliderStation }) => {
     const successPosition = async (location) => {
       const TOKEN =
         "pk.eyJ1IjoiamZlbGlwZWxhZGlubyIsImEiOiJjbDFmbHF1dzUwMXo1M2JudDQwNjVoNWw3In0.wiRr4CxecJHGtM18meygeQ";
-      const profile = "driving";
+      const prof = profile;
       const from = [location.coords.longitude, location.coords.latitude];
       const to = [result[0].longitud, result[0].latitud];
-      const URI = `https://api.mapbox.com/directions/v5/mapbox/${profile}/${from};${to}?geometries=geojson&access_token=${TOKEN}`;
+      const URI = `https://api.mapbox.com/directions/v5/mapbox/${prof}/${from};${to}?geometries=geojson&access_token=${TOKEN}`;
       const res = await axios.get(URI);
-      setCoordinates(res.data.routes[0].geometry.coordinates);
+      // setDirections(res.data.routes[0].geometry.coordinates);
+      setDirections(res.data.routes[0]);
       setSliderStation(false);
+      setSliderIndications(true);
     };
 
     const errorPosition = (err) => {
@@ -60,6 +63,12 @@ const Station = ({ estacion, data, setSliderStation }) => {
       options
     );
   };
+
+  useEffect(() => {
+    if (!(Object.entries(directions).length === 0)) {
+      handleLocation();
+    }
+  }, [profile]);
 
   useEffect(() => {
     const axiosData = async () => {
@@ -82,9 +91,7 @@ const Station = ({ estacion, data, setSliderStation }) => {
           key={item.ID_Estacion}
           style={{ borderBottom: "1px solid #d4d4d4" }}
         >
-          <h3 className={`text-center fw-bold ${styles.title}`}>
-            {item.nombre}
-          </h3>
+          <p className={`text-center  ${styles.title}`}>{item.nombre}</p>
 
           <FontAwesomeIcon
             onClick={() => {
@@ -96,7 +103,7 @@ const Station = ({ estacion, data, setSliderStation }) => {
 
           <div className="container">
             <div className={styles.mtop}>
-              <p className="fs-6">{item.descripcion}</p>
+              <p className={styles.description}>{item.descripcion}</p>
             </div>
           </div>
         </div>

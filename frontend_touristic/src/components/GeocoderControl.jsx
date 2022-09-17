@@ -19,7 +19,7 @@ export default function GeocoderControl({ estacionesGeoJSON }) {
         // Add a tree emoji as a prefix for custom
         // data results using carmen geojson format:
         // https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
-        feature["place_name"] = "🌍 " + feature.properties;
+        feature["place_name"] = "🐌 " + feature.properties;
         feature["center"] = feature.geometry.coordinates;
         feature["place_type"] = ["place"];
         matchingFeatures.push(feature);
@@ -34,6 +34,9 @@ export default function GeocoderControl({ estacionesGeoJSON }) {
       localGeocoderOnly: true,
       mapboxgl: mapboxgl,
       placeholder: "Busque aquí",
+      marker: false,
+      limit: 10,
+      enableGeolocation: true,
     });
 
     return ctrl;
