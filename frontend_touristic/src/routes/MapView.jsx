@@ -1,5 +1,11 @@
 import React, { useState, useMemo, useEffect, useContext } from "react";
-import Map, { Marker, GeolocateControl, Source, Layer } from "react-map-gl";
+import Map, {
+  Marker,
+  GeolocateControl,
+  Source,
+  Layer,
+  NavigationControl,
+} from "react-map-gl";
 import axios from "axios";
 import { point } from "@turf/helpers";
 import GeocoderControl from "../components/GeocoderControl";
@@ -106,6 +112,7 @@ const MapView = () => {
     <>
       <Map
         {...viewState}
+        dragRotate={false}
         onMove={(evt) => setViewState(evt.viewState)}
         style={{
           width: "100vw",
@@ -114,12 +121,11 @@ const MapView = () => {
           bottom: "0",
           top: "0",
         }}
-        // maxBounds={bounds}
+        maxBounds={bounds}
         mapboxAccessToken="pk.eyJ1IjoiamZlbGlwZWxhZGlubyIsImEiOiJjbDFmbmc2MGIwMGFhM2NxYjNkMjJnNHl6In0.4DpT3U9E6A9nzbxdb_6vHg"
         mapStyle="mapbox://styles/jfelipeladino/cl1yho734000414o5b4b0j9xe"
       >
         {markers}
-
         <SliderStation
           sliderStation={sliderStation}
           setSliderStation={setSliderStation}
@@ -167,6 +173,7 @@ const MapView = () => {
           trackUserLocation="true"
           showUserHeading="true"
         />
+        <NavigationControl showCompass={false} position="top-left" />
 
         <Logout />
       </Map>

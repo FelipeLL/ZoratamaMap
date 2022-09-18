@@ -1,15 +1,23 @@
 .rounded-boton {
   position: absolute;
-  width: 1.45em;
-  height: 1.45em;
+  right: 10px;
+  top: 100px;
+  width: 1.75em;
+  height: 1.75em;
   overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
-  margin-left: 10px;
-  margin-top: 50px;
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 639px) {
+  .rounded-boton {
+    top: 120px;
+    width: 2.05em;
+    height: 2.05em;
+  }
 }
