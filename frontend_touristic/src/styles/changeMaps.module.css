@@ -60,3 +60,26 @@
   transform: rotate(-360deg);
   color: #34a853;
 }
+
+@media screen and (max-width: 639px) {
+  .toggle-btn {
+    top: 170px;
+    right: 10px;
+    width: 2.28em;
+    height: 2.28em;
+  }
+  .options {
+    top: 170px;
+    right: 10px;
+    width: 2.28em;
+    height: 2.28em;
+  }
+
+  .nav-content.open span:nth-child(2) {
+    top: 240px;
+  }
+
+  .nav-content.open span:nth-child(3) {
+    top: 240px;
+  }
+}
