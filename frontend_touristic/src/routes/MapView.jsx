@@ -17,6 +17,7 @@ import OpenConfig from "../components/OpenConfig";
 import OpenProfile from "../components/OpenProfile";
 import Profile from "../components/Profile";
 import Indications from "../components/Indications";
+import ChangeMaps from "../components/ChangeMaps";
 
 const MapView = () => {
   //estado inicial de la vista
@@ -41,6 +42,9 @@ const MapView = () => {
   const [sliderStation, setSliderStation] = useState(false);
   const [sliderConfig, setSliderConfig] = useState(false);
   const [sliderProfile, setSliderProfile] = useState(false);
+  const [mapStyle, setMapStyle] = useState(
+    "jfelipeladino/cl1yho734000414o5b4b0j9xe"
+  );
   const [data, setData] = useState([]);
   const [estacion, setEstacion] = useState(0);
   const { admin, directions } = useContext(UserContext);
@@ -123,7 +127,7 @@ const MapView = () => {
         }}
         maxBounds={bounds}
         mapboxAccessToken="pk.eyJ1IjoiamZlbGlwZWxhZGlubyIsImEiOiJjbDFmbmc2MGIwMGFhM2NxYjNkMjJnNHl6In0.4DpT3U9E6A9nzbxdb_6vHg"
-        mapStyle="mapbox://styles/jfelipeladino/cl1yho734000414o5b4b0j9xe"
+        mapStyle={`mapbox://styles/${mapStyle}`}
       >
         {markers}
         <SliderStation
@@ -137,7 +141,7 @@ const MapView = () => {
         </Source>
 
         <Indications />
-
+        <ChangeMaps setMapStyle={setMapStyle} />
         {admin ? (
           <>
             <Admin
