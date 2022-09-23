@@ -11,11 +11,14 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserProvider";
 import { alertError, alertInfo } from "../utilities/Alerts";
+import ImageModal from "./ImageModal";
 
 const Station = ({ estacion, data, setSliderStation }) => {
   //en el result se guarda la estación en especifico
   let result = data.filter((item) => item.ID_Estacion === estacion);
   const [imageList, setImageList] = useState([]);
+  const [image, setImage] = useState({});
+  const [showImageModal, setShowImageModal] = useState(false);
   const { uploadImage, setUploadImage } = useContext(UserContext);
   const { admin, directions, setDirections, setSliderIndications, profile } =
     useContext(UserContext);
@@ -62,6 +65,14 @@ const Station = ({ estacion, data, setSliderStation }) => {
       errorPosition,
       options
     );
+  };
+
+  const handleShowImage = (url, name) => {
+    setImage({
+      name,
+      url,
+    });
+    setShowImageModal(true);
   };
 
   useEffect(() => {
@@ -129,18 +140,32 @@ const Station = ({ estacion, data, setSliderStation }) => {
           </div>
         </div>
         {admin ? (
-          <div className={styles["lista-imagenes"]}>
-            {imageList.map((image) => (
-              <div key={image.ID_Imagen}>
-                <img src={image.url} alt="Imagen 1" />
-                <FontAwesomeIcon
-                  icon={faCircleXmark}
-                  className={`${styles["icon-img"]}`}
-                  onClick={() => handleDeleteImage(image.ID_Imagen, image.name)}
-                />
-              </div>
-            ))}
-          </div>
+          <>
+            <div className={styles["lista-imagenes"]}>
+              {imageList.map((image) => (
+                <div key={image.ID_Imagen}>
+                  <img
+                    src={image.url}
+                    alt="Imagen 1"
+                    onClick={() => handleShowImage(image.url, image.name)}
+                  />
+                  <FontAwesomeIcon
+                    icon={faCircleXmark}
+                    className={`${styles["icon-img"]}`}
+                    onClick={() =>
+                      handleDeleteImage(image.ID_Imagen, image.name)
+                    }
+                  />
+                </div>
+              ))}
+            </div>
+            <ImageModal
+              showImageModal={showImageModal}
+              setShowImageModal={setShowImageModal}
+              image={image}
+              setImage={setImage}
+            />
+          </>
         ) : (
           <div className={styles["lista-imagenes"]}>
             {imageList.map((image) => (
