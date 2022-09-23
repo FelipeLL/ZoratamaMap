@@ -88,13 +88,13 @@
   }
 }
 
-@media (max-height: 670px) {
+@media (max-height: 750px) {
   .section .popup-box {
-    padding: 20px;
-    height: 80%;
-  }
-  .section .popup-box {
+    padding: 17px 10px;
     height: 90%;
+  }
+  .box-header p {
+    font-size: 13px;
   }
 }
 
