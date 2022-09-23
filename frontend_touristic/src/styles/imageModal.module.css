@@ -38,18 +38,18 @@
   position: relative;
   background: #fff;
   border-radius: 0.35rem;
-  padding: 30px;
+  padding: 30px 15px;
   max-width: 400px;
   width: 100%;
   height: 70%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .popup-box .close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 24px;
+  top: 8px;
+  right: 10px;
+  font-size: 28px;
   color: #b4b4b4;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -95,11 +95,5 @@
   }
   .box-header p {
     font-size: 13px;
-  }
-}
-
-@media (max-height: 540px) {
-  .section .popup-box {
-    height: 90%;
   }
 }
