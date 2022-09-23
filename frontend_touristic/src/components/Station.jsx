@@ -167,13 +167,25 @@ const Station = ({ estacion, data, setSliderStation }) => {
             />
           </>
         ) : (
-          <div className={styles["lista-imagenes"]}>
-            {imageList.map((image) => (
-              <div key={image.ID_Imagen}>
-                <img src={image.url} alt="Imagen 1" />
-              </div>
-            ))}
-          </div>
+          <>
+            <div className={styles["lista-imagenes"]}>
+              {imageList.map((image) => (
+                <div key={image.ID_Imagen}>
+                  <img
+                    src={image.url}
+                    alt="Imagen 1"
+                    onClick={() => handleShowImage(image.url, image.name)}
+                  />
+                </div>
+              ))}
+            </div>
+            <ImageModal
+              showImageModal={showImageModal}
+              setShowImageModal={setShowImageModal}
+              image={image}
+              setImage={setImage}
+            />
+          </>
         )}
       </div>
       <ToastContainer />
