@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState, useContext } from "react";
 import { UserContext } from "../context/UserProvider";
-import { alertInfo, alertWarning } from "../utilities/Alerts";
-import { ToastContainer } from "react-toastify";
+import { alertWarning } from "../utilities/Alerts";
+import { toast, ToastContainer } from "react-toastify";
 
 const ViewProfile = ({ userData }) => {
   const inputFileRef = useRef(null);
@@ -21,13 +21,22 @@ const ViewProfile = ({ userData }) => {
     }
     const formdata = new FormData();
     formdata.append("image", file);
-    console.log(file);
-    await axios.put(
-      "https://mapzoratama.herokuapp.com/api/users/imageProfile/" +
-        userData[0].ID_Usuario,
-      formdata
+
+    await toast.promise(
+      axios.put(
+        "https://mapzoratama.herokuapp.com/api/users/imageProfile/" +
+          userData[0].ID_Usuario,
+        formdata
+      ),
+      {
+        pending: "La imagen se esta subiendo...",
+        success: "Imagen de perfil subida correctamente 👌",
+        error: "Error al cargar la imagen 🤯",
+      },
+      {
+        position: toast.POSITION.TOP_LEFT,
+      }
     );
-    alertInfo("Imagen actualizada correctamente");
     setUploadProfile(true);
     setFile(null);
   };
