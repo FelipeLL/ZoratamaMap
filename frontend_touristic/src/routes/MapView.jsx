@@ -67,7 +67,6 @@ const MapView = () => {
           setEstacion(estacion.ID_Estacion);
         }}
       >
-        {/* <Point svg={"animal"} /> */}
         <img src={estacion.icono.url} alt="img" />
       </Marker>
     ));
@@ -163,14 +162,8 @@ const MapView = () => {
           </>
         )}
 
-        {data.length !== 0 ? (
-          <>
-            <GeocoderControl estacionesGeoJSON={estacionesGeoJSON} />
-
-            {/* <DirectionsControl estacionesGeoJSON={estacionesGeoJSON} /> */}
-          </>
-        ) : (
-          console.log("no hay datos")
+        {data.length !== 0 && (
+          <GeocoderControl estacionesGeoJSON={estacionesGeoJSON} />
         )}
         <GeolocateControl
           position="top-left"

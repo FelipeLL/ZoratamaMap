@@ -38,7 +38,6 @@ const Admin = ({ sliderConfig, setSliderConfig }) => {
               >
                 <FontAwesomeIcon
                   icon={faBars}
-                  /* style={{ fontSize: "27px", color: "#1a1a1a" }} */
                   className={styles["icon-menu"]}
                 />
               </div>

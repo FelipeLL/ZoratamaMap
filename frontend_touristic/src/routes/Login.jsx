@@ -1,5 +1,4 @@
 import "react-toastify/dist/ReactToastify.css";
-import "../style.css";
 import styles from "../styles/login.module.css";
 import logo from "../images/logo.svg";
 import { UserContext } from "../context/UserProvider";
@@ -85,7 +84,7 @@ const Login = () => {
             <div className="carousel-inner">
               {/* <!--IMAGEN 1--> */}
               <div
-                className="carousel-item img-1 min-vh-100 active"
+                className={`carousel-item min-vh-100 active ${styles["img-1"]}`}
                 data-bs-interval="2500"
               >
                 <div className="carousel-caption d-none d-md-block">
@@ -94,7 +93,7 @@ const Login = () => {
               </div>
               {/* <!--IMAGEN 2--> */}
               <div
-                className="carousel-item img-2 min-vh-100"
+                className={`carousel-item min-vh-100 ${styles["img-2"]}`}
                 data-bs-interval="2500"
               >
                 <div className="carousel-caption d-none d-md-block">
@@ -105,7 +104,7 @@ const Login = () => {
               </div>
               {/* <!--IMAGEN 3--> */}
               <div
-                className="carousel-item img-3 min-vh-100"
+                className={`carousel-item min-vh-100 ${styles["img-3"]}`}
                 data-bs-interval="2500"
               >
                 <div className="carousel-caption d-none d-md-block">
@@ -152,9 +151,7 @@ const Login = () => {
               <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles["input-box"]}>
                   <input
-                    className={styles.input}
                     type="text"
-                    id="exampleInputEmail1"
                     placeholder="Ingresa tu correo electrónico"
                     name="email"
                     {...register("email", {
@@ -166,9 +163,7 @@ const Login = () => {
 
                 <div className={styles["input-box"]}>
                   <input
-                    className={styles.input}
                     type="password"
-                    id="exampleInputEmail2"
                     placeholder="Ingresa tu contraseña"
                     name="password"
                     {...register("password", {
@@ -181,9 +176,6 @@ const Login = () => {
                 <span className={styles["button-box"]}>
                   <button>Iniciar Sesión</button>
                 </span>
-                <a className={styles.forgot} href="#">
-                  Forgot password?
-                </a>
               </form>
             </div>
             <div className={styles["login-box"]}>

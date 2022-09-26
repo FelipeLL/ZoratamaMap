@@ -1,4 +1,5 @@
 import styles from "../styles/register.module.css";
+import "react-toastify/dist/ReactToastify.css";
 import logo from "../images/logo.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -6,10 +7,7 @@ import { useForm } from "react-hook-form";
 import { formValidate } from "../utilities/formValidate";
 import FormError from "../components/FormError";
 import { alertError, alertSuccess } from "../utilities/Alerts";
-
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 const Register = () => {
   const URI = "https://mapzoratama.herokuapp.com/api/users/register";
 
@@ -40,7 +38,6 @@ const Register = () => {
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles["input-box"]}>
               <input
-                className={styles.input}
                 type="text"
                 placeholder="Nombre"
                 name="nombre"
@@ -53,7 +50,6 @@ const Register = () => {
 
             <div className={styles["input-box"]}>
               <input
-                className={styles.input}
                 type="text"
                 placeholder="Correo electrónico"
                 name="correo"
@@ -66,7 +62,6 @@ const Register = () => {
             {errors.correo && <FormError error={errors.correo} />}
             <div className={styles["input-box"]}>
               <input
-                className={styles.input}
                 type="password"
                 placeholder="Contraseña"
                 name="password"

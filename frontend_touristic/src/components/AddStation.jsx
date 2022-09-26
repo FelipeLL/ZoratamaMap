@@ -144,14 +144,11 @@ const AddStation = () => {
         </div>
         <div className="row">
           <div className="col-6">
-            <label htmlFor="exampleInputEmail1" className={styles.text}>
-              Longitud
-            </label>
+            <label className={styles.text}>Longitud</label>
 
             <div className={styles["input-box"]}>
               <input
                 type="text"
-                id="exampleInputEmail1"
                 name="longitud"
                 onChange={handleChange}
                 ref={inputLngRef}
@@ -159,13 +156,10 @@ const AddStation = () => {
             </div>
           </div>
           <div className="col-6">
-            <label htmlFor="exampleInputEmail2" className={styles.text}>
-              Latitud
-            </label>
+            <label className={styles.text}>Latitud</label>
             <div className={styles["input-box"]}>
               <input
                 type="text"
-                id="exampleInputEmail2"
                 name="latitud"
                 onChange={handleChange}
                 ref={inputLatRef}
@@ -175,9 +169,7 @@ const AddStation = () => {
         </div>
         <div className="row">
           <div className="col-12">
-            <label htmlFor="exampleInputEmail1" className={styles.text}>
-              Descripción
-            </label>
+            <label className={styles.text}>Descripción</label>
 
             <div className={styles["input-box"]}>
               <textarea

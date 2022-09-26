@@ -41,11 +41,7 @@
 
 .input-box {
   height: 52px;
-  margin: 5px 0;
-}
-
-.input-box {
-  margin-left: 10px;
+  margin: 5px 0 5px 10px;
 }
 
 .input-box input,
@@ -74,10 +70,6 @@
 
 .input-box textarea:focus {
   border-color: #bbb;
-}
-
-.nombre {
-  width: 96%;
 }
 
 .button-box {
