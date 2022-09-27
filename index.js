@@ -63,7 +63,9 @@ app.get("/api/", (req, res) => {
 if (process.env.NODE_ENV === 'production') {
 
   app.use(
-    expressStaticGzip(path.join(__dirname, 'frontend_touristic/build'))
+    expressStaticGzip(path.join(__dirname, 'frontend_touristic/build'), {
+      enableBrotli: true,
+    })
   )
 
   // Serve any static files
