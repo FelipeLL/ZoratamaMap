@@ -1,5 +1,6 @@
 import express from "express";
 import fileUpload from "express-fileupload";
+import expressStaticGzip from "express-static-gzip"
 import path from "path"
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
@@ -60,6 +61,11 @@ app.get("/api/", (req, res) => {
 })
 
 if (process.env.NODE_ENV === 'production') {
+
+  app.use(
+    expressStaticGzip(path.join(__dirname, 'frontend_touristic/build'))
+  )
+
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'frontend_touristic/build')));
   // Handle React routing, return all requests to React app
