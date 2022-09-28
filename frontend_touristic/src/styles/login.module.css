@@ -41,7 +41,7 @@
 
 .header img {
   width: 255px;
-  height: auto;
+  height: 100%;
   background: cover no-repeat;
 }
 
@@ -138,6 +138,7 @@
 
 .app-img img {
   height: 40px;
+  width: 100%;
 }
 
 @media (max-height: 560px) {
