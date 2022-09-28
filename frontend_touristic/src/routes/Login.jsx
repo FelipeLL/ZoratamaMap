@@ -1,6 +1,5 @@
 import "react-toastify/dist/ReactToastify.css";
 import styles from "../styles/login.module.css";
-import logo from "../images/logo.svg";
 import { UserContext } from "../context/UserProvider";
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -145,7 +144,10 @@ const Login = () => {
           <div className={styles.content}>
             <div className={styles["login-box"]}>
               <div className={styles.header}>
-                <img src={logo} alt="logo" />
+                <img
+                  src="https://zoratamagallery.sfo3.digitaloceanspaces.com/Iconos/logo.svg"
+                  alt="logo"
+                />
               </div>
 
               <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
