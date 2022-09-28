@@ -1,6 +1,5 @@
 import styles from "../styles/register.module.css";
 import "react-toastify/dist/ReactToastify.css";
-import logo from "../images/logo.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -33,7 +32,10 @@ const Register = () => {
       <div className={styles.content}>
         <div className={styles["register-box"]}>
           <div className={styles.header}>
-            <img src={logo} alt="logo" />
+            <img
+              src="https://zoratamagallery.sfo3.digitaloceanspaces.com/Iconos/logo.svg"
+              alt="logo"
+            />
           </div>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles["input-box"]}>
