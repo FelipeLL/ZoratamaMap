@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,22 +7,27 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/Login";
 import UserProvider from './context/UserProvider';
-import MapView from './routes/MapView';
 import Auth from "./components/Auth";
-import Register from './routes/Register';
+import Loader from './components/Loader';
+
+const Register = lazy(() => import('./routes/Register'))
+const MapView = lazy(() => import('./routes/MapView'))
+
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path="/mapView" element={<Auth>
-              <MapView />
-            </Auth>} />
-          </Route>
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route index element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path="/mapView" element={<Auth>
+                <MapView />
+              </Auth>} />
+            </Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </UserProvider>
 
