@@ -12,5 +12,5 @@ export const Config = {
   endpoint: process.env.ENDPOINT,
   awsAccessKeyId: process.env.aws_access_key_id,
   awsSecretAccessKey: process.env.aws_secret_access_key,
-
+  cdn: process.env.CDN,
 };
