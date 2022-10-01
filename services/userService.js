@@ -71,11 +71,11 @@ export const updateImgProfile = async (file, idUser) => {
         ACL: "public-read",
         Bucket: Config.bucketName,
         Body: file.data,
-        Key: name
+        Key: `Perfiles/${name}`
 
     }).promise()
 
-    const urlImage = `https://${Config.bucketName}.${Config.endpoint}/${name}`
+    const urlImage = `https://${Config.bucketName}.${Config.endpoint}/Perfiles/${name}`
 
     const user = {
         fotografia: urlImage
