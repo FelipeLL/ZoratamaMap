@@ -145,7 +145,7 @@ const Login = () => {
             <div className={styles["login-box"]}>
               <div className={styles.header}>
                 <img
-                  src="https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Iconos/logo.svg"
+                  src="https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Utilidades/logo.svg"
                   alt="logo"
                 />
               </div>
