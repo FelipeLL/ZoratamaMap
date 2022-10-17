@@ -35,7 +35,7 @@ app.use(fileUpload({
 
 const corsConfig = {
   credentials: true,
-  origin: ['https://zoratama-map.netlify.app', "https://mapzoratama.herokuapp.com"],
+  origin: ['https://zoratama-map.netlify.app', "https://mapzoratama.herokuapp.com", "https://pwa-felipe.netlify.app"],
 };
 app.use(cors(corsConfig));
 
