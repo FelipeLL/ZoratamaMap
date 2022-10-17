@@ -1,15 +1,18 @@
 .img-1 {
+  /*Propiedades de la imagen 1 del primer slider*/
   background-image: url("../images/Ruta1.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .img-2 {
+  /*Propiedades de la imagen 1 del primer slider*/
   background-image: url("../images/Ruta2.jpeg");
   background-size: cover;
   background-position: center;
 }
 .img-3 {
+  /*Propiedades de la imagen 1 del primer slider*/
   background-image: url("../images/Ruta3.jpeg");
   background-size: cover;
   background-position: center;
@@ -19,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .content {
@@ -43,6 +47,15 @@
   width: 255px;
   height: 100%;
   background: cover no-repeat;
+}
+
+.welcome p {
+  line-height: 18px;
+  color: #262626;
+  font-size: 15px;
+  text-align: center;
+  margin: 0 20px 15px 20px;
+  font-weight: 500;
 }
 
 .form {
@@ -116,39 +129,26 @@
   color: #3897f0;
 }
 
-.app p {
+.footer p {
   line-height: 18px;
   color: #262626;
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
-  margin: 30px 20px;
+  margin: 30px 0;
 }
 
-.app-img {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.app-img a {
-  margin-right: 8px;
-  height: 43.5px;
-}
-
-.app-img img {
-  height: 40px;
-  width: 100%;
+.footer span {
+  font-weight: 500;
 }
 
 @media (max-height: 560px) {
-  .app p {
-    margin: 15px 20px;
+  .footer p {
+    margin: 20px 0;
   }
   .header {
     margin: 0 auto 12px;
   }
   .header img {
-    width: 185px;
+    width: 210px;
   }
 }
