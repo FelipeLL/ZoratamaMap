@@ -100,13 +100,12 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', (event) => {
   // Check if this is a navigation request
   console.log(event.request);
-  if (event.request.mode === 'cors' && event.request.method === 'GET') {
+  if (event.request.method === 'GET') {
     // Open the cache
     event.respondWith(caches.open("cache-zoratama").then((cache) => {
       // Go to the network first
       return fetch(event.request.url).then((fetchedResponse) => {
         cache.put(event.request, fetchedResponse.clone());
-        console.log(fetchedResponse);
         return fetchedResponse;
       }).catch(() => {
         // If the network is unavailable, get

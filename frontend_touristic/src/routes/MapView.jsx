@@ -26,7 +26,8 @@ const MapView = () => {
     latitude: 4.311859,
     zoom: 13,
   };
-  const { upload, setUpload } = useContext(UserContext);
+  const { upload, setUpload, setIdUser, setAdmin, setOnline } =
+    useContext(UserContext);
   useEffect(() => {
     const axiosData = async () => {
       const URI = "https://mapzoratama.herokuapp.com/api/estaciones";
@@ -37,6 +38,24 @@ const MapView = () => {
     axiosData();
   }, [upload]);
 
+  useEffect(() => {
+    readToken();
+  }, []);
+
+  const readToken = async () => {
+    const res = await axios({
+      method: "get",
+      url: "https://mapzoratama.herokuapp.com/api/auth",
+      withCredentials: true,
+    });
+    if (res.data.isToken) {
+      setIdUser(res.data.idUser);
+      res.data.isAdmin && setAdmin(true);
+      setOnline(true);
+    } else {
+      setOnline(null);
+    }
+  };
   //establecer vista
   const [viewState, setViewState] = useState(initialState);
   const [sliderStation, setSliderStation] = useState(false);
