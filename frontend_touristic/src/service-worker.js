@@ -81,7 +81,6 @@ self.addEventListener('install', event => {
         cache.addAll([
           "favicon.ico",
           "manifest.json",
-          "https://mapzoratama.herokuapp.com/api/auth",
         ]))
   )
 })
