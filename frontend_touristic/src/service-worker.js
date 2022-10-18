@@ -100,6 +100,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', (event) => {
   // Check if this is a navigation request
+  console.log(event.request);
   if (event.request.mode === 'navigate') {
     // Open the cache
     event.respondWith(caches.open("cache-zoratama").then((cache) => {
