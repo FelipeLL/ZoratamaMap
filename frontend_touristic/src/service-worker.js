@@ -86,7 +86,7 @@ self.addEventListener('install', event => {
   )
 })
 
-self.addEventListener('fetch', event => {
+/* self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
       if (response) {
@@ -96,4 +96,24 @@ self.addEventListener('fetch', event => {
       return fetch(event.request)
     })
   )
-})
+}) */
+
+self.addEventListener('fetch', (event) => {
+  // Check if this is a navigation request
+  if (event.request.mode === 'navigate') {
+    // Open the cache
+    event.respondWith(caches.open("cache-zoratama").then((cache) => {
+      // Go to the network first
+      return fetch(event.request.url).then((fetchedResponse) => {
+        cache.put(event.request, fetchedResponse.clone());
+
+        return fetchedResponse;
+      }).catch(() => {
+        // If the network is unavailable, get
+        return cache.match(event.request.url);
+      });
+    }));
+  } else {
+    return;
+  }
+});
