@@ -100,6 +100,8 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', (event) => {
   // Check if this is a navigation request
   console.log(event.request);
+  console.log(event.response);
+  console.log(event.request.response);
   if (event.request.mode === 'cors' && event.request.method === 'GET') {
     // Open the cache
     event.respondWith(caches.open("cache-zoratama").then((cache) => {
