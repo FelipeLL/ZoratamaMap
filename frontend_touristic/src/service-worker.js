@@ -100,6 +100,7 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', (event) => {
   // Check if this is a navigation request
   console.log(event.request);
+  console.log(event.request.url.includes("https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com"));
   if (event.request.method === 'GET') {
     // Open the cache
     event.respondWith(caches.open("cache-zoratama").then((cache) => {
