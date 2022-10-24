@@ -24,7 +24,7 @@ const UpdateProfile = ({ userData }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const URI = `https://mapzoratama.herokuapp.com/api/users/${userData[0].ID_Usuario}`;
+      const URI = `https://zoratamamap.up.railway.app/api/users/${userData[0].ID_Usuario}`;
       const res = await axios.put(URI, user);
       alertSuccess(res.data.results.message);
       setUploadProfile(true);

@@ -22,7 +22,7 @@ const UpdateStation = () => {
 
   useEffect(() => {
     const axiosData = async () => {
-      const URI = "https://mapzoratama.herokuapp.com/api/estaciones";
+      const URI = "https://zoratamamap.up.railway.app/api/estaciones";
       const res = await axios.get(URI);
       setData(res.data);
     };
@@ -56,7 +56,7 @@ const UpdateStation = () => {
     }
 
     await axios.put(
-      `https://mapzoratama.herokuapp.com/api/estaciones/${estacion}`,
+      `https://zoratamamap.up.railway.app/api/estaciones/${estacion}`,
       estaciones
     );
     setUpload(true);

@@ -30,7 +30,7 @@ const MapView = () => {
     useContext(UserContext);
   useEffect(() => {
     const axiosData = async () => {
-      const URI = "https://mapzoratama.herokuapp.com/api/estaciones";
+      const URI = "https://zoratamamap.up.railway.app/api/estaciones";
       const res = await axios.get(URI);
       setData(res.data);
       setUpload(false);
@@ -45,7 +45,7 @@ const MapView = () => {
   const readToken = async () => {
     const res = await axios({
       method: "get",
-      url: "https://mapzoratama.herokuapp.com/api/auth",
+      url: "https://zoratamamap.up.railway.app/api/auth",
       withCredentials: true,
     });
     if (res.data.isToken) {

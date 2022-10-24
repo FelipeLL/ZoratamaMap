@@ -32,7 +32,7 @@ const UpdatePassword = ({ userData }) => {
       }
 
       const URI =
-        "https://mapzoratama.herokuapp.com/api/users/password/" +
+        "https://zoratamamap.up.railway.app/api/users/password/" +
         userData[0].ID_Usuario;
       const res = await axios.put(URI, { currentPassword, newPassword });
 

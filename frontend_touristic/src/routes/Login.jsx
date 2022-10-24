@@ -19,7 +19,7 @@ const Login = () => {
   const { required } = formValidate();
   const navigate = useNavigate();
 
-  const URI = "https://mapzoratama.herokuapp.com/api/auth";
+  const URI = "https://zoratamamap.up.railway.app/api/auth";
 
   const { setAdmin } = useContext(UserContext);
   const { online, setOnline } = useContext(UserContext);

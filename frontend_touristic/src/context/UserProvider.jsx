@@ -20,7 +20,7 @@ const UserProvider = ({ children }) => {
   const readToken = async () => {
     const res = await axios({
       method: "get",
-      url: "https://mapzoratama.herokuapp.com/api/auth",
+      url: "https://zoratamamap.up.railway.app/api/auth",
       withCredentials: true,
     });
     if (res.data.isToken) {

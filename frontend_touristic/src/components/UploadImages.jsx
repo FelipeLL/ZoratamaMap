@@ -11,7 +11,7 @@ import { alertWarning } from "../utilities/Alerts";
 const UploadImages = () => {
   useEffect(() => {
     const axiosData = async () => {
-      const URI = "https://mapzoratama.herokuapp.com/api/estaciones";
+      const URI = "https://zoratamamap.up.railway.app/api/estaciones";
       const res = await axios.get(URI);
       setData(res.data);
     };
@@ -91,7 +91,7 @@ const UploadImages = () => {
     formdata.append("image", file);
     await toast.promise(
       axios.post(
-        "https://mapzoratama.herokuapp.com/api/images/upload/" +
+        "https://zoratamamap.up.railway.app/api/images/upload/" +
           estaciones.estacion,
         formdata
       ),
