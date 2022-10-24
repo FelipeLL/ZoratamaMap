@@ -75,7 +75,7 @@ export const updateImgProfile = async (file, idUser) => {
 
     }).promise()
 
-    const urlImage = `https://${Config.bucketName}.${Config.endpoint}/Perfiles/${name}`
+    const urlImage = `https://${Config.bucketName}.${Config.cdn}/Perfiles/${name}`
 
     const user = {
         fotografia: urlImage
