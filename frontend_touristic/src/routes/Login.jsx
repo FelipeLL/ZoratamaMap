@@ -87,7 +87,7 @@ const Login = () => {
                 data-bs-interval="2500"
               >
                 <div className="carousel-caption d-none d-md-block">
-                  <h5 className="fw-bold">Descubre algo sorprendete</h5>
+                  <h5 className="text-ligth">Descubre algo sorprendete</h5>
                 </div>
               </div>
               {/* <!--IMAGEN 2--> */}
@@ -96,9 +96,7 @@ const Login = () => {
                 data-bs-interval="2500"
               >
                 <div className="carousel-caption d-none d-md-block">
-                  <h5 className="font-weight-bold">
-                    Descubre algo sorprendete
-                  </h5>
+                  <h5 className="text-ligth">Descubre algo sorprendete</h5>
                 </div>
               </div>
               {/* <!--IMAGEN 3--> */}
@@ -107,9 +105,7 @@ const Login = () => {
                 data-bs-interval="2500"
               >
                 <div className="carousel-caption d-none d-md-block">
-                  <h5 className="font-weight-bold">
-                    Descubre algo sorprendete
-                  </h5>
+                  <h5 className="text-ligth">Descubre algo sorprendete</h5>
                 </div>
               </div>
             </div>
