@@ -1,19 +1,19 @@
 .img-1 {
   /*Propiedades de la imagen 1 del primer slider*/
-  background-image: url("../images/Ruta1.jpeg");
+  background-image: url("https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Slides/Slide1.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .img-2 {
   /*Propiedades de la imagen 1 del primer slider*/
-  background-image: url("../images/Ruta2.jpeg");
+  background-image: url("https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Slides/Slide2.jpeg");
   background-size: cover;
   background-position: center;
 }
 .img-3 {
   /*Propiedades de la imagen 1 del primer slider*/
-  background-image: url("../images/Ruta3.jpeg");
+  background-image: url("https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Slides/Slide3.jpeg");
   background-size: cover;
   background-position: center;
 }
