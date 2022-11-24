@@ -5,7 +5,7 @@ import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Logout = () => {
   const cerrar = async () => {
-    const URI = "https://zoratamamap.up.railway.app/api/auth/logout";
+    const URI = "https://zoratama-map.herokuapp.com/api/auth/logout";
     await axios({
       method: "get",
       url: URI,

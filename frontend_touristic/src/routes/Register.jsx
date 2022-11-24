@@ -8,7 +8,7 @@ import FormError from "../components/FormError";
 import { alertError, alertSuccess } from "../utilities/Alerts";
 import { ToastContainer } from "react-toastify";
 const Register = () => {
-  const URI = "https://zoratamamap.up.railway.app/api/users/register";
+  const URI = "https://zoratama-map.herokuapp.com/api/users/register";
 
   const {
     register,
