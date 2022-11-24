@@ -24,7 +24,7 @@ const ViewProfile = ({ userData }) => {
 
     await toast.promise(
       axios.put(
-        "https://zoratamamap.up.railway.app/api/users/imageProfile/" +
+        "https://zoratama-map.herokuapp.com/api/users/imageProfile/" +
           userData[0].ID_Usuario,
         formdata
       ),
@@ -77,7 +77,7 @@ const ViewProfile = ({ userData }) => {
     try {
       await axios({
         method: "delete",
-        url: `https://zoratamamap.up.railway.app/api/users/${userData[0].ID_Usuario}`,
+        url: `https://zoratama-map.herokuapp.com/api/users/${userData[0].ID_Usuario}`,
         withCredentials: true,
       });
     } catch (error) {
